@@ -11,16 +11,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.theironyard.invoicify.models.BillingRecord;
 import com.theironyard.invoicify.repositories.BillingRecordRepository;
+import com.theironyard.invoicify.repositories.CompanyRepository;
 
 public class BillingRecordControllerTests {
 	
 	private BillingRecordController controller;
 	private BillingRecordRepository repo;
+	private CompanyRepository coRepo;		
+	
 	
 	@Before
 	public void setup() {
 		repo = mock(BillingRecordRepository.class);
-		controller = new BillingRecordController(repo);
+		controller = new BillingRecordController(repo, coRepo);
 	}
 
 	@Test

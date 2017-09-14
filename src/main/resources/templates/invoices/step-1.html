@@ -1,0 +1,16 @@
+<h1>Select a Client</h1>
+<form method="post" action="/invoices/new">
+<select name = "clientId">
+
+<option>Choose One</option>
+{{ #companies }}
+<option value= "{{ id }}"> {{ name }} </option>
+{{ /companies }}
+<input type="hidden" name="{{ _csrf.parameterName }}" value="{{ _csrf.token }}">
+
+</select>
+
+<button>Choose</button>
+</form>
+
+
