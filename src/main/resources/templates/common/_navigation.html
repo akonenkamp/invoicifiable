@@ -1,0 +1,29 @@
+<!-- This is _navigation.html -->
+<div>
+  {{#user}}
+    <form action="/logout" method="post">
+      Hello, {{ username }}
+      <button>Logout</button>
+      <input type="hidden" name="{{ _csrf.parameterName }}" value="{{ _csrf.token }}">
+    </form>
+     {{#isAccountant}}
+  		<a href="/invoices">Invoices</a>
+  	{{/isAccountant}}
+  	{{ #isClerk }}
+  		<a href="/billing-records">Billing Records</a>
+  	{{/ isClerk }}
+  	{{ #isAdmin }}
+  	<a href="/invoices">Invoices</a>
+  	<a href="/billing-records">Billing Records</a>
+  	<a href="/admin/companies">Invoice Records</a>
+  	{{/ isAdmin }}
+  	
+
+  	
+  {{/user}}
+  {{#notUser}}
+    <a href="/login">Login</a>
+    <a href="/signup">Sign up</a>
+  {{/notUser}}
+
+</div>

@@ -1,0 +1,29 @@
+{{> common/_navigation }}
+<form action ="/admin/companies" method="post">
+<input type="text" name="name" required placeholder="name">
+
+
+
+<input type="hidden" name="{{ _csrf.parameterName }}" value="{{ _csrf.token }}">
+<button>Create</button>
+</form>
+	
+	<table>
+		<thead>
+
+			<tr>
+				<th>Name</th>
+
+				<th>Invoice Qty</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#companies}}
+			<tr>
+			<td>{{ name }}</td>
+			<td>{{ invoices.size }}</td>
+			</tr>
+			{{/companies}}
+		</tbody>
+		</table>
+		

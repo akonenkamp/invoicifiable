@@ -1,5 +1,8 @@
 <body>
-
+{{> common/_navigation }}
+<div>
+{{ errorMessage }}
+</div>
 	<form method="post" action="/invoices/create">
 		<input type="text" name="invoiceNumber" required>
 		<button>Create the Invoice</button>
