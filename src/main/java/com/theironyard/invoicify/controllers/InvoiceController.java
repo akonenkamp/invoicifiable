@@ -92,7 +92,7 @@ public class InvoiceController {
 		invoice.setCreatedOn(now);
 		invoice.setLineItems(items);
 		invoiceRepository.save(invoice);
-		mv.setViewName("/invoices");
+		mv.setViewName("redirect:/invoices");
 		
 	}
 	 
